@@ -1,4 +1,10 @@
 <script>
+  import Navbar from './Navbar.svelte';
+  import ExpenseList from './ExpenseList.svelte';
+  import expensivesData from './expensives';
+  let expensives = [...expensivesData];
+
+  console.log(expensives);
 </script>
 
 <style>
@@ -9,5 +15,6 @@
 </style>
 
 <div class="App">
-  <h1>hi</h1>
+  <Navbar />
+  <ExpenseList expenses={expensives} />
 </div>
