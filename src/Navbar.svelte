@@ -1,4 +1,6 @@
 <script>
+  import { getContext } from 'svelte';
+  const { showForm } = getContext('state');
 </script>
 
 <style>
@@ -12,6 +14,6 @@
 <nav>
   <div>
     <h1>Budget Calculator</h1>
-    <button type="button"> +</button>
+    <button type="button" on:click={showForm}> +</button>
   </div>
 </nav>

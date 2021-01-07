@@ -4,7 +4,7 @@
   export let id;
   export let cost;
   export let index;
-  const { remove } = getContext('state');
+  const { remove, setModifiedExpense } = getContext('state');
   let displayAmount = false;
 </script>
 
@@ -27,5 +27,8 @@
       <h4>amount: ${cost}</h4>
     {/if}
   </div>
-  <div><button> edit </button> <button on:click={() => remove(id)}> delete </button></div>
+  <div>
+    <button on:click={() => setModifiedExpense(id)}> edit </button>
+    <button on:click={() => remove(id)}> delete </button>
+  </div>
 </article>
