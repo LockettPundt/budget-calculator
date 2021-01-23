@@ -4,6 +4,7 @@
   import Total from './Total.svelte';
   import ExpenseForm from './ExpenseForm.svelte';
   import ExpenseList from './ExpenseList.svelte';
+  import Modal from './Modal.svelte';
   let expensives = [];
 
   const state = {
@@ -74,19 +75,20 @@
   afterUpdate(() => setLocalStorage());
 </script>
 
+<div class="App">
+  <Navbar />
+  <ExpenseList expenses={expensives} />
+  <Total title="Total Expenses" {total} />
+  <button on:click={() => state.clear()}>Clear List</button>
+</div>
+
+<Modal bind:showForm>
+  <ExpenseForm name={setName} cost={setCost} {isEditing} />
+</Modal>
+
 <style>
   :global(body) {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
   }
 </style>
-
-<div class="App">
-  <Navbar />
-  {#if showForm}
-    <ExpenseForm name={setName} cost={setCost} {isEditing} />
-  {/if}
-  <ExpenseList expenses={expensives} />
-  <Total title="Total Expenses" {total} />
-  <button on:click={() => state.clear()}>Clear List</button>
-</div>

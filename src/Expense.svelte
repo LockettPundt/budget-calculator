@@ -8,14 +8,6 @@
   let displayAmount = false;
 </script>
 
-<style>
-  article {
-    margin: 10px 0;
-    background-color: cadetblue;
-    padding: 10px;
-  }
-</style>
-
 <article>
   <div>
     <h2>
@@ -32,3 +24,11 @@
     <button on:click={() => remove(id)}> delete </button>
   </div>
 </article>
+
+<style>
+  article {
+    margin: 10px 0;
+    background-color: cadetblue;
+    padding: 10px;
+  }
+</style>

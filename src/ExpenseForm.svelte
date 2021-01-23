@@ -28,21 +28,12 @@
   };
 </script>
 
-<style>
-  div {
-    width: 20%;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-  p {
-    color: red;
-  }
-</style>
-
 <section>
   <Title title="Add Expense" />
   <form on:submit|preventDefault={onSubmit}>
-    <button type="button" on:click={hideForm}>Close</button>
+    <div class="toggle">
+      <button type="button" on:click={hideForm}>Close</button>
+    </div>
     <div>
       <label for="name">Name</label>
       <input type="text" id="name" bind:value={name} />
@@ -57,3 +48,20 @@
     </button>
   </form>
 </section>
+
+<style>
+  .toggle {
+    display: flex;
+    flex-direction: column;
+  }
+  .toggle > button {
+    align-self: flex-end;
+  }
+  div {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  p {
+    color: red;
+  }
+</style>
