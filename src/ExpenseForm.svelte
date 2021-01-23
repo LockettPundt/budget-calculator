@@ -64,4 +64,11 @@
   p {
     color: red;
   }
+  form {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  form > button {
+    justify-self: end;
+  }
 </style>
