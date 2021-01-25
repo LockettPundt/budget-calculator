@@ -1,5 +1,7 @@
 <script>
   import { getContext } from 'svelte';
+  import { fly } from 'svelte/transition';
+  import { quadInOut } from 'svelte/easing';
   export let name;
   export let id;
   export let cost;
@@ -16,7 +18,15 @@
       <button on:click|once={() => (displayAmount = !displayAmount)}> more </button>
     </h2>
     {#if displayAmount}
-      <h4>amount: ${cost}</h4>
+      <h4
+        transition:fly={{
+          x: 100,
+          y: 0,
+          duration: 500,
+          delay: 300,
+          easing: quadInOut,
+        }}
+      >amount: ${cost}</h4>
     {/if}
   </div>
   <div>

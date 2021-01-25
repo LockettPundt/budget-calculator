@@ -6,10 +6,10 @@
   export let cost = 0;
   export let isEditing = false;
 
-  onMount(() => console.log('form has mounted'));
-  onDestroy(() => console.log('form is destroyed'));
-  beforeUpdate(() => console.log('before update'));
-  afterUpdate(() => console.log('after update'));
+  // onMount(() => console.log('form has mounted'));
+  // onDestroy(() => console.log('form is destroyed'));
+  // beforeUpdate(() => console.log('before update'));
+  // afterUpdate(() => console.log('after update'));
   $: empty = !name || !cost;
 
   const onSubmit = () => {
