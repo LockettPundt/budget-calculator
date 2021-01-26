@@ -1,11 +1,11 @@
 <script>
   export let showForm;
-  import { fly } from 'svelte/transition';
+  import { fly, blur } from 'svelte/transition';
   import { quadInOut } from 'svelte/easing';
 </script>
 
 {#if showForm}
-  <div class="overlay">
+  <div class="overlay" transition:blur>
     <div
       class="modal"
       in:fly={{
@@ -16,8 +16,8 @@
         easing: quadInOut,
       }}
       out:fly={{
-        x: 100,
-        y: 0,
+        x: 0,
+        y: -100,
         duration: 250,
         delay: 50,
         easing: quadInOut,

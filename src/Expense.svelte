@@ -1,6 +1,6 @@
 <script>
   import { getContext } from 'svelte';
-  import { fly } from 'svelte/transition';
+  import { fly, slide } from 'svelte/transition';
   import { quadInOut } from 'svelte/easing';
   export let name;
   export let id;
@@ -19,11 +19,11 @@
     </h2>
     {#if displayAmount}
       <h4
-        transition:fly={{
-          x: 100,
-          y: 0,
-          duration: 500,
-          delay: 300,
+        transition:slide={{
+          x: 0,
+          y: 100,
+          duration: 300,
+          delay: 30,
           easing: quadInOut,
         }}
       >amount: ${cost}</h4>

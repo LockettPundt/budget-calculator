@@ -12,11 +12,11 @@
     add: (options) => {
       showForm = false;
       expensives = [
-        ...expensives,
         {
           ...options,
-          id: Math.max(...expensives.map((x) => x.id)) + 1,
+          id: expensives.length ? Math.max(...expensives.map((x) => x.id)) + 1 : 1,
         },
+        ...expensives,
       ];
     },
     edit: ({ name, cost }) => {
